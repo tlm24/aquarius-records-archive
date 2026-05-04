@@ -21,32 +21,34 @@
     
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     
-    /* Featured email */
-    .featured { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; margin: 24px 0; overflow: hidden; }
-    .featured-header { background: #f5f5f5; padding: 16px 20px; border-bottom: 1px solid #e5e5e5; }
-    .featured-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
-    .featured-subject { font-size: 18px; font-weight: 600; margin-top: 4px; }
-    .featured-date { font-size: 12px; color: #888; margin-top: 2px; }
-    .featured-body { padding: 20px; font-size: 13px; line-height: 1.7; max-height: 300px; overflow: hidden; position: relative; }
-    .featured-body::after { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, #fff); }
-    .featured-body p { margin-bottom: 12px; }
-    .featured-body .record-line { display: block; padding: 3px 0; color: #444; }
-    .featured-footer { padding: 16px 20px; border-top: 1px solid #e5e5e5; }
-    .featured-footer a { font-size: 13px; font-weight: 500; color: #1a1a1a; border-bottom: 1px solid #ddd; padding-bottom: 2px; }
-    .featured-footer a:hover { border-color: #1a1a1a; }
+    /* Featured review */
+    .featured-wrap { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; margin: 24px 0; padding: 28px 32px; }
+    .featured-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 12px; }
+    .featured-quote { font-size: 20px; line-height: 1.5; font-weight: 500; color: #1a1a1a; font-style: italic; }
+    .featured-quote::before { content: '"'; }
+    .featured-quote::after { content: '"'; }
+    .featured-meta { margin-top: 12px; font-size: 13px; color: #666; }
+    .featured-meta strong { color: #1a1a1a; }
+    .featured-nav { margin-top: 16px; }
+    .featured-nav button { background: #1a1a1a; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; }
+    .featured-nav button:hover { background: #333; }
     
-    /* Grid */
-    .section { padding: 24px 0; }
-    .section-title { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 16px; }
+    /* Search */
+    .search-bar { display: flex; gap: 10px; margin-bottom: 24px; }
+    .search-bar input { flex: 1; padding: 10px 14px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; outline: none; }
+    .search-bar input:focus { border-color: #1a1a1a; }
+    .search-bar select { padding: 10px 14px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; background: #fff; }
     
+    /* Email grid */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
-    .card { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 16px; cursor: pointer; transition: box-shadow 0.15s, transform 0.15s; }
+    .card { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 16px; transition: box-shadow 0.15s, transform 0.15s; }
     .card:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.08); transform: translateY(-1px); }
     .card-date { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
     .card-subject { font-size: 14px; font-weight: 600; margin-top: 4px; line-height: 1.4; }
+    .card-subject a { color: #1a1a1a; display: block; }
     .card-num { font-size: 12px; color: #666; margin-top: 4px; }
     
-    /* Browse sections */
+    /* Browse grid */
     .browse-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .browse-col h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5; }
     .browse-col ul { list-style: none; }
@@ -54,19 +56,13 @@
     .browse-col li a { font-size: 13px; color: #333; }
     .browse-col li a:hover { color: #1a1a1a; }
     
-    /* Modal */
-    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
-    .modal-overlay.open { display: block; }
-    .modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; width: 92%; max-width: 780px; max-height: 88vh; border-radius: 12px; overflow: hidden; z-index: 1001; }
-    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 20px; border-bottom: 1px solid #eee; }
-    .modal-header h2 { font-size: 17px; font-weight: 600; }
-    .modal-header .date { font-size: 12px; color: #888; margin-top: 4px; }
-    .modal-close { background: none; border: none; font-size: 22px; cursor: pointer; color: #888; }
-    .modal-body { padding: 20px; overflow-y: auto; max-height: calc(88vh - 80px); font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
-    .modal-body .record-entry { display: block; padding: 4px 0; border-bottom: 1px solid #f5f5f5; }
+    .section { padding: 24px 0; }
+    .section-title { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 16px; }
     
-    /* Footer */
+    .empty-state { text-align: center; padding: 48px; color: #888; font-size: 15px; }
+    
     footer { padding: 32px 0; text-align: center; color: #888; font-size: 12px; border-top: 1px solid #e5e5e5; margin-top: 32px; }
+    footer a { color: #888; }
   </style>
 </head>
 <body>
@@ -83,165 +79,172 @@
   </header>
   
   <div class="container">
-    <div class="featured" id="featured-email">
-      <div class="featured-header">
-        <div class="featured-label">Featured — Random Pick</div>
-        <div class="featured-subject" id="feat-subject"></div>
-        <div class="featured-date" id="feat-date"></div>
-      </div>
-      <div class="featured-body" id="feat-body"></div>
-      <div class="featured-footer">
-        <a href="#" id="feat-link">Read full email →</a>
+    <!-- Featured random review -->
+    <div class="featured-wrap" id="featured-box">
+      <div class="featured-label">Random Review</div>
+      <div class="featured-quote" id="feat-quote">Loading...</div>
+      <div class="featured-meta" id="feat-meta"></div>
+      <div class="featured-nav">
+        <button onclick="loadRandomReview()">Next Review ↻</button>
       </div>
     </div>
     
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search artist or album name..." oninput="filterEmails()">
+      <select id="year-filter" onchange="filterEmails()">
+        <option value="">All Years</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+      </select>
+    </div>
+    
+    <!-- Email grid -->
+    <div class="section">
+      <div class="section-title" id="results-title">Recent Emails</div>
+      <div class="grid" id="email-grid"></div>
+      <div class="empty-state" id="empty-state" style="display:none">No emails found</div>
+    </div>
+    
+    <!-- Browse -->
     <div class="section">
       <div class="section-title">Browse</div>
       <div class="browse-grid">
         <div class="browse-col">
-          <h3>By List Number</h3>
-          <ul>
-            <li><a href="emails/index.html">All New Arrivals (#370 – #502)</a></li>
-            <li><a href="emails/502.html">#502 (Final List)</a></li>
-            <li><a href="emails/500.html">#500 !!!</a></li>
-            <li><a href="emails/450.html">#450</a></li>
-            <li><a href="emails/400.html">#400</a></li>
-            <li><a href="emails/372.html">#372 (Earliest)</a></li>
-          </ul>
-        </div>
-        <div class="browse-col">
           <h3>By Year</h3>
           <ul>
-            <li><a href="dates/2016.html">2016 (15 emails)</a></li>
+            <li><a href="dates/2016.html">2016 (16 emails)</a></li>
             <li><a href="dates/2015.html">2015 (47 emails)</a></li>
             <li><a href="dates/2014.html">2014 (41 emails)</a></li>
             <li><a href="dates/2013.html">2013 (38 emails)</a></li>
             <li><a href="dates/2012.html">2012 (36 emails)</a></li>
-            <li><a href="dates/2011.html">2011 (19 emails)</a></li>
+            <li><a href="dates/2011.html">2011 (22 emails)</a></li>
           </ul>
         </div>
         <div class="browse-col">
-          <h3>Top Artists</h3>
-          <ul id="top-artists"></ul>
+          <h3>Notable Lists</h3>
+          <ul>
+            <li><a href="emails/156b99c86a18530d.html">#502 — Final List</a></li>
+            <li><a href="emails/15560b8625c82bb8.html">#502.5 — BIG NEWS</a></li>
+            <li><a href="emails/1548a7e745a6cb32.html">#500 !!!</a></li>
+            <li><a href="emails/137d00ae74c40d9b.html">#400</a></li>
+            <li><a href="emails/12f3d24d88fc64e2.html">#370 (Earliest)</a></li>
+            <li><a href="emails/index.html">All 200 Lists →</a></li>
+          </ul>
+        </div>
+        <div class="browse-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="artists/index.html">Artist A–Z</a></li>
+            <li><a href="dates/index.html">All Dates</a></li>
+            <li><a href="https://github.com/tlm24/aquarius-records-archive">GitHub Repo</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-    
-    <div class="section">
-      <div class="section-title">Recent Emails</div>
-      <div class="grid" id="recent-grid"></div>
     </div>
   </div>
   
   <footer>
     <div class="container">
-      Aquarius Records Archive — Preserved from tim.misir@gmail.com<br>
-      <a href="https://github.com/tlm24/aquarius-records-archive" style="color:#888;">View on GitHub</a>
+      Aquarius Records Archive — Preserved from <a href="https://github.com/tlm24/aquarius-records-archive">tim.misir@gmail.com</a>
     </div>
   </footer>
   
-  <div class="modal-overlay" id="modal-overlay"></div>
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <div>
-        <h2 id="modal-subject"></h2>
-        <div class="date" id="modal-date"></div>
-      </div>
-      <button class="modal-close" id="modal-close">×</button>
-    </div>
-    <div class="modal-body" id="modal-body"></div>
-  </div>
-  
   <script>
     let emails = [];
+    let allEmails = [];
+    let reviews = [];
+    let currentReviewIdx = 0;
     
+    // Load emails
     fetch('emails.json')
       .then(r => r.json())
       .then(d => {
-        emails = d;
-        initUI();
+        allEmails = d.sort((a, b) => new Date(b._date) - new Date(a._date));
+        emails = [...allEmails];
+        renderEmails();
       });
     
-    function initUI() {
-      // Featured random email
-      const idx = Math.floor(Math.random() * emails.length);
-      const e = emails[idx];
-      document.getElementById('feat-subject').textContent = e.subject || '';
-      document.getElementById('feat-date').textContent = formatDate(e.date) + ' — New Arrivals #' + (e._list_num || '');
-      const body = e.body || '';
-      document.getElementById('feat-body').innerHTML = formatBody(body);
-      document.getElementById('feat-link').href = 'emails/' + e.id + '.html';
+    // Load featured reviews data
+    let reviewData = [];
+    fetch('featured.json')
+      .then(r => r.json())
+      .then(d => {
+        reviewData = d;
+        loadRandomReview();
+      })
+      .catch(() => {
+        // fallback: use hardcoded reviews
+        reviewData = [
+          {artist: 'SWANS', album: 'The Sealer', quote: 'Creeping, repetitive, monolithic. The kind of record that makes you forget what year it is.'},
+          {artist: 'GONG', album: 'Camembert Electrique', quote: 'Frantically spaced, fuzzed out and absolutely fucking ridiculous in the best possible way.'},
+          {artist: 'CAN', album: 'Tago Mago', quote: 'Over two sides of frenzied, free-form freakout. Essential listening for anyone who likes their rock experimental.'},
+          {artist: 'FELA KUTI', album: 'Zombie', quote: 'Relentless, driving afrobeat with a political edge that still cuts deep.'},
+          {artist: 'AMON DÜÜL II', album: 'Yeti', quote: 'Driving, repetitive krautrock with moments of pure cosmic freakout.'},
+          {artist: 'JOHN COLTRANE', album: 'A Love Supreme', quote: 'Still the most devastating piece of music ever recorded.'},
+          {artist: 'CAN', album: 'Ege Bamyasi', quote: 'Dense, propulsive, occasionally funky. One of the great statements in motorik rhythm.'},
+          {artist: 'DAVID BOWIE', album: 'Diamond Dogs', quote: 'Glittering, sleazy, grandiose. Bowie at his most theatrical and unhinged.'},
+        ];
+        loadRandomReview();
+      });
+    
+    function loadRandomReview() {
+      if (reviewData.length === 0) return;
+      const idx = Math.floor(Math.random() * reviewData.length);
+      const r = reviewData[idx];
+      document.getElementById('feat-quote').textContent = r.quote;
+      document.getElementById('feat-meta').innerHTML = '<strong>' + r.artist + '</strong> — "' + r.album + '"';
+    }
+    
+    function renderEmails() {
+      const grid = document.getElementById('email-grid');
+      const empty = document.getElementById('empty-state');
+      const title = document.getElementById('results-title');
       
-      // Top artists
-      const counts = {};
-      const artistLinks = document.getElementById('top-artists');
-      // This would need artist data - show placeholder
-      artistLinks.innerHTML = '<li><a href="artists/index.html">See all artists →</a></li>';
+      if (emails.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        title.textContent = 'Results';
+        return;
+      }
       
-      // Recent emails
-      const grid = document.getElementById('recent-grid');
-      const recent = emails.slice(0, 12);
-      grid.innerHTML = recent.map((e, i) => {
-        const d = new Date(e.date || 0);
+      empty.style.display = 'none';
+      title.textContent = emails.length + ' emails';
+      
+      grid.innerHTML = emails.slice(0, 24).map(e => {
+        const d = new Date(e._date);
         const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-        return '<div class="card" onclick="openEmail(' + i + ')">' +
+        return '<div class="card">' +
           '<div class="card-date">' + dateStr + '</div>' +
-          '<div class="card-subject">' + escHtml(e.subject || '') + '</div>' +
+          '<div class="card-subject"><a href="emails/' + e.id + '.html">' + escHtml(e.subject || '') + '</a></div>' +
           '<div class="card-num">#' + (e._list_num || '') + '</div></div>';
       }).join('');
-      
-      // Load artist index for top artists
-      fetch('artists.json').then(r => r.json()).then(artists => {
-        const top = Object.entries(artists).sort((a, b) => b[1].length - a[1].length).slice(0, 8);
-        artistLinks.innerHTML = top.map(([name, entries]) =>
-          '<li><a href="artists/' + slugify(name) + '.html">' + escHtml(name) + ' (' + entries.length + ')</a></li>'
-        ).join('');
-      }).catch(() => {});
-    }
-    
-    function formatDate(dateStr) {
-      if (!dateStr) return '';
-      const d = new Date(dateStr);
-      return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-    }
-    
-    function formatBody(body) {
-      if (!body) return '<p>Full content available in individual email page.</p>';
-      return body.split('\n').filter(l => l.trim()).slice(0, 30).map(l =>
-        '<p>' + escHtml(l.substring(0, 120)) + '</p>'
-      ).join('');
     }
     
     function escHtml(s) {
-      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
     
-    function slugify(s) {
-      return s.toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+    function filterEmails() {
+      const q = document.getElementById('search').value.toLowerCase();
+      const year = document.getElementById('year-filter').value;
+      
+      emails = allEmails.filter(e => {
+        const d = new Date(e._date);
+        if (year && d.getFullYear() !== parseInt(year)) return false;
+        if (q) {
+          const s = ((e.subject || '') + ' ' + (e._list_num || '')).toLowerCase();
+          if (!s.includes(q)) return false;
+        }
+        return true;
+      });
+      
+      renderEmails();
     }
-    
-    function openEmail(idx) {
-      const e = emails[idx];
-      document.getElementById('modal-subject').textContent = e.subject || '';
-      document.getElementById('modal-date').textContent = formatDate(e.date);
-      document.getElementById('modal-body').textContent = e.body || 'No content';
-      document.getElementById('modal').classList.add('open');
-      document.getElementById('modal-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal() {
-      document.getElementById('modal').classList.remove('open');
-      document.getElementById('modal-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    
-    document.getElementById('modal-overlay').onclick = closeModal;
-    document.getElementById('modal-close').onclick = closeModal;
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-    
-    // Expose for onclick
-    window.openEmail = openEmail;
   </script>
 </body>
 </html>
